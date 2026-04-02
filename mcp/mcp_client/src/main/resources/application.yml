@@ -1,0 +1,74 @@
+spring:
+  ai:
+    mcp:
+      client:
+        #启用/禁用 MCP 客户端
+        enabled: true
+        #MCP 客户端实例的名称
+        name: spring-ai-mcp-client
+        #MCP 客户端实例的版本号
+        version: 1.0.0
+        #是否在创建时初始化客户端
+        initialized: true
+        #MCP 客户端请求的超时时长
+        request-timeout: 30s
+        #客户端类型（SYNC 或 ASYNC）。所有客户端必须统一为同步或异步，不支持混合使用
+        type: sync
+        #启用/禁用所有客户端的根目录变更通知
+        root-change-notification: true
+        toolcallback:
+          #启用/禁用与 Spring AI 工具执行框架的 MCP 工具回调集成
+          enabled: true
+        annotation-scanner:
+          #启用/禁用 MCP 客户端注解的自动扫描
+          enabled: true
+
+
+        #基于 stdio 方式
+        stdio:
+          #使用 Claude Desktop 格式的 JSON 外部文件来配置 stdio 连接，或下面配置二选一
+          #servers-configuration: classpath:mcp-servers.json
+          connections:
+            server1:
+              #为 MCP 服务器执行的命令
+              command: /path/to/server
+              #命令参数列表
+              args:
+                - --port=8080
+                - --mode=production
+              #服务器进程的环境变量映射
+              env:
+                API_KEY: your-api-key
+                DEBUG: "true"
+
+
+        #基于 streamable-http 方式
+        streamable-http:
+          connections:
+            server1:
+              #与 MCP 服务器进行 Streamable-Http 通信的基础 URL 端点
+              url: http://localhost:8080
+            server2:
+              url: http://otherserver:8081
+              #连接使用的 streamable-http 端点（作为 URL 后缀）
+              endpoint: /custom-sse
+
+
+        #基于 sse，已废弃
+        sse:
+          connections:
+            # Simple configuration using default /sse endpoint
+            server1:
+              url: http://localhost:8080
+            # Custom SSE endpoint
+            server2:
+              url: http://otherserver:8081
+              sse-endpoint: /custom-sse
+            # Complex URL with path and token (like MCP Hub)
+            mcp-hub:
+              url: http://localhost:3000
+              sse-endpoint: /mcp-hub/sse/cf9ec4527e3c4a2cbb149a85ea45ab01
+            # SSE endpoint with query parameters
+            api-server:
+              url: https://api.example.com
+              sse-endpoint: /v1/mcp/events?token=abc123&format=json
