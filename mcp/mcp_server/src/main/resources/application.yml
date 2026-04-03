@@ -1,0 +1,63 @@
+spring:
+  ai:
+    openai:
+      base-url: https://ark.cn-beijing.volces.com/api/coding/v3
+      api-key: 840d9b70-13cd-4789-8157-af40cd0f1dca
+      chat:
+        completions-path: /chat/completions
+        options:
+          model: glm-4.7
+          temperature: 0.7
+    mcp:
+      server:
+        #启用/禁用 MCP 服务器
+        enabled: true
+        #启用/禁用 STDIO 传输,二选一，protocol 可选 sse|streamable|stateless
+        stdio: true
+        #protocol: streamable
+
+#        #可选的 URL 前缀。例如，base-url=/api/v1 意味着客户端应在 /api/v1 + sse-endpoint 访问 SSE 端点，消息端点则是 /api/v1 + sse-message-endpoint
+#        base-url: /api/vi
+#        #自定义 SSE 端点路径，用于 Web 传输
+#        sse-endpoint: /sse
+#        #自定义 SSE 消息端点路径，用于 Web 传输，供客户端发送消息
+#        sse-message-endpoint: /mcp/message
+
+
+
+        #用于标识的服务器名称
+        name: mcp-server
+        #服务器版本
+        version: 1.0.0
+        #可选的说明，用于指导客户端如何与此服务器交互
+        instructions: null
+        #服务器类型 (SYNC/ASYNC)
+        type: sync
+        capabilities:
+          #启用/禁用资源功能
+          resource: true
+          #启用/禁用工具功能
+          tool: true
+          #启用/禁用提示词功能
+          prompt: true
+          #启用/禁用补全功能
+          completion: true
+        #启用资源变更通知
+        resource-change-notification: true
+        #启用提示词变更通知
+        prompt-change-notification: true
+        #启用工具变更通知
+        tool-change-notification: true
+        #可选的每个工具名称的响应 MIME 类型
+        tool-response-mime-type:
+          generateImage: image/png
+        #请求超时前等待服务器响应的时长。适用于通过客户端发出的所有请求，包括工具调用、资源访问和提示词操作
+        request-timeout: 30s
+        #启用/禁用 MCP 服务器注解的自动扫描
+        annotation-scanner:
+          enabled: true
+        #服务器可以选择性地定期向连接的客户端发送 Ping 消息，以验证连接的健康状况。默认情况下，保活功能是禁用的
+        keep-alive-interval: 30s
+
+
+
