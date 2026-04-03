@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 工具过滤
  */
-@Component
+//@Component
 public class CustomMcpToolFilter implements McpToolFilter {
 
     @Override

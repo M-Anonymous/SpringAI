@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-@Component
+//@Component
 public class CustomMcpSyncClientCustomizer implements McpSyncClientCustomizer {
     @Override
     public void customize(String serverConfigurationName, McpClient.SyncSpec spec) {

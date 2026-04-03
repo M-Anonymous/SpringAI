@@ -21,7 +21,7 @@ import java.util.Map;
  * MCP 客户端启动器支持通过 ToolContextToMcpMetaConverter 接口，自定义将 Spring AI 的 ToolContext（工具上下文）转换为 MCP 工具调用元数据。
  * 此功能允许你将额外的上下文信息（例如用户 ID、密钥令牌等）作为元数据，连同 LLM 生成的调用参数一起传递。
  */
-@Component
+//@Component
 public class CustomToolContextToMcpMetaConverter implements ToolContextToMcpMetaConverter {
 
     @Override

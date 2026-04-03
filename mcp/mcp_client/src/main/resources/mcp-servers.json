@@ -5,8 +5,8 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/username/Desktop",
-        "/Users/username/Downloads"
+        "C:\\Users\\Mr Mei\\Desktop",
+        "C:\\Users\\Mr Mei\\Downloads"
       ]
     }
   }

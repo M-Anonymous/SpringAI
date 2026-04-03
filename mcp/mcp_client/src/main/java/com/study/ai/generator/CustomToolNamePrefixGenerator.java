@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * DefaultMcpToolNamePrefixGenerator
  * 这是默认使用的生成器（如果你没有提供自定义 Bean 的话）。它通过追踪重复项并在必要时添加计数器前缀，来确保工具名称的唯一性。
  */
-@Component
+//@Component
 public class CustomToolNamePrefixGenerator implements McpToolNamePrefixGenerator {
 
     @Override

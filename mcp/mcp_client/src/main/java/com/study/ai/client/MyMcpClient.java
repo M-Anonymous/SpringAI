@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class MyMcpClient {
 
     @Bean(destroyMethod = "close")
-    @ConditionalOnMissingBean(MyMcpClient.class)
+    @ConditionalOnMissingBean(McpSyncClient.class)
     public McpSyncClient mcpClient() {
         ServerParameters stdioParams;
 

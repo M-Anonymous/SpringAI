@@ -19,7 +19,7 @@ import java.util.List;
  * @McpResourceListChanged - 处理服务器资源列表变更的通知
  * @McpPromptListChanged - 处理服务器提示词列表变更的通知
  */
-@Component
+//@Component
 public class McpClientHandlers {
 
     // 监听特定服务器 ("server1") 的日志消息
