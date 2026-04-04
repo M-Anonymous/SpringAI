@@ -1,7 +1,7 @@
 package com.study.ai.provider;
 
 import io.modelcontextprotocol.spec.McpSchema;
-import org.springaicommunity.mcp.annotation.McpComplete;
+import org.springframework.ai.mcp.annotation.McpComplete;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

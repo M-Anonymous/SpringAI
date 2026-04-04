@@ -1,8 +1,9 @@
 package com.study.ai.provider;
 
 import io.modelcontextprotocol.spec.McpSchema;
-import org.springaicommunity.mcp.annotation.McpArg;
-import org.springaicommunity.mcp.annotation.McpPrompt;
+
+import org.springframework.ai.mcp.annotation.McpArg;
+import org.springframework.ai.mcp.annotation.McpPrompt;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * @McpPrompt 注解用于生成用于 AI 交互的提示词消息。
  */
-//@Component
+@Component
 public class PromptProvider {
 
     @McpPrompt(

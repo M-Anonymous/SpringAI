@@ -1,8 +1,8 @@
 package com.study.ai.provider;
 
 import io.modelcontextprotocol.spec.McpSchema;
-import org.springaicommunity.mcp.annotation.McpResource;
-import org.springaicommunity.mcp.context.McpSyncRequestContext;
+import org.springframework.ai.mcp.annotation.McpResource;
+import org.springframework.ai.mcp.annotation.context.McpSyncRequestContext;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @McpResource 注解通过 URI 模板提供对资源的访问。
  */
-//@Component
+@Component
 public class ResourceProvider {
 
     @McpResource(
@@ -18,7 +18,7 @@ public class ResourceProvider {
             name = "Configuration",
             description = "Provides configuration data")
     public String getConfig(String key) {
-        return null;//configData.get(key);
+        return "TEST";//configData.get(key);
     }
 
     @McpResource(
